@@ -1,0 +1,24 @@
+import SwiftUI
+
+struct ListView : View {
+    var body: some View {
+        
+        NavigationView {
+            List(superheroseries) { SuperHero in NavigationLink(
+                    destination: DetayView(secilenKahraman: SuperHero),
+                    label: {
+                        Text(SuperHero.name)
+                    })
+                .padding()
+            }.navigationTitle(Text("Super Heroes Book"))
+                
+            
+        }
+    }
+}
+
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListView()
+    }
+}

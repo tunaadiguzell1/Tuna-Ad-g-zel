@@ -1,2 +1,36 @@
 # Tuna-Ad-g-zel
 SUPER HEROES BOOK
+
+
+import SwiftUI
+import Foundation
+import CoreLocation
+
+struct SuperHero : Identifiable {
+    var id = UUID()
+    var name : String
+    var realname : String
+    var imagename: String
+    var city : String
+    var job : String 
+    var koordinat : Koordinat
+    
+    var koordinatLokasyonu:                      CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude:         koordinat.latitude, longitude:       koordinat.longitude)
+    }
+}
+
+struct Koordinat {
+    var latitude : Double //Enlem
+    var longitude : Double //Boylam
+}
+
+let superman = SuperHero(name: "Superman", realname:"Clark Joseph Kent", imagename: "Superman", city: "KAl-EI", job: "Journalist", koordinat: Koordinat(latitude: 41.8713679, longitude: -87.7669902))
+
+let batman = SuperHero(name: "Batman", realname:"Bruce Wayne", imagename: "Batman", city: "Gotham", job: "Executive Officer", koordinat: Koordinat(latitude: 39.0865207, longitude: -94.7089592))
+
+let spiderman = SuperHero(name: "Spiderman", realname:"Peter Parker", imagename: "Spiderman", city: "New York", job: "Photographer", koordinat: Koordinat(latitude: 40.7160119, longitude: -74.0524729))
+
+let ironman = SuperHero(name: "Ironman", realname:"Tony Stark", imagename: "Ironman", city: "Los Angeles", job: "Business Man", koordinat: Koordinat(latitude: 33.8003309, longitude: -118.2261294))
+
+let superheroseries = [superman,batman,spiderman,ironman]
